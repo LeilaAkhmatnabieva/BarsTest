@@ -8,7 +8,7 @@
         'firstName',
         //'middleName',
         'lastName',
-        'birthday',
+        'birthday'
         //'passportNum1',
         //'passportNum2',
         //'passportIssuePlace',

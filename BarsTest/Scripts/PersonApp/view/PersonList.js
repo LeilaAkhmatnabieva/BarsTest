@@ -9,8 +9,8 @@
         this.columns = [
             { header: 'Id', dataIndex: 'id', flex: 1 },
             { header: 'Name', dataIndex: 'firstName', flex: 1 },
-            { header: 'Lastname', dataIndex: 'lastName', flex: 1 },
-            { header: 'birth', dataIndex: 'birthday', flex: 1 }
+            { header: 'LastName', dataIndex: 'lastName', flex: 1 },
+            { header: 'birthday', dataIndex: 'birthday', flex: 1 }
         ];
 
         this.callParent(arguments);

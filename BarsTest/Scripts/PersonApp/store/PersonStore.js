@@ -9,6 +9,7 @@
         url: 'Scripts/PersonApp/data/persons.json',
         reader: {
             type: 'json',
+            //root: 'data',
             root: 'persons',
             successProperty: 'success'
         }

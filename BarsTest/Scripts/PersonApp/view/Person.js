@@ -2,7 +2,7 @@
     extend: 'Ext.window.Window',
     alias: 'widget.personwindow',
 
-    title: 'Анкета',
+    title: 'Добавить пользователя',
     layout: 'fit',
     autoShow: true,
 
