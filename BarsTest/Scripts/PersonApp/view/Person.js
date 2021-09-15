@@ -11,6 +11,10 @@
             xtype: 'form',
             items: [{
                 xtype: 'textfield',
+                name: 'id',
+                fieldLabel: 'Id'
+            },{
+                xtype: 'textfield',
                 name: 'firstName',
                 fieldLabel: 'Название'
             }, {

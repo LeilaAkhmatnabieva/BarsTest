@@ -71,10 +71,14 @@
     deletePerson: function (button) {
         var win = button.up('window'),
             form = win.down('form'),
+
+            //values = form.getValues();
+
             id = form.getRecord().get('id');
         Ext.Ajax.request({
             url: 'Home/delete',
-            params: { id: id },
+            params: { "id" : id },
+            
             success: function (response) {
                 var data = Ext.decode(response.responseText);
                 if (data.success) {

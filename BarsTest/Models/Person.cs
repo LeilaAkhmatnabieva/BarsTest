@@ -8,7 +8,7 @@ namespace BarsTest.Models
 {
     public class Person
     {
-        public  Person(int Perid, string firstName, string lastName, string birthday)
+        public  Person(int Perid, string firstName, string lastName, int birthday)
         {
             this.birthday = birthday;
             this.id = Perid;
@@ -27,7 +27,7 @@ namespace BarsTest.Models
         public string firstName { get; set; }
         //public string middleName { get; set; }
         public string lastName { get; set; }
-        public string birthday { get; set; }
+        public int birthday { get; set; }
 
         //public int? passportNum1 { get; set; }
         //public int? passportNum2 { get; set; }
