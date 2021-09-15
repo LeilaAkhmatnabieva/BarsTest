@@ -3,21 +3,21 @@
   "persons": [
     {
       "id": 1,
-      "firstName": "Война и мир",
-      "lastName": "Л. Толстой",
+      "firstName": "РёРјСЏ",
+      "lastName": "С„Р°РјРёР»РёСЏ",
       "birthday": 1863
     },
     {
       "id": 2,
-      "firstName": "Отцы и дети",
-      "lastName": "И. Тургенев",
-      "birthday": 1862
+      "firstName": "kkgj",
+      "lastName": "xksjd",
+      "birthday": 1863
     },
     {
       "id": 3,
-      "firstName": "Евгений Онегин",
-      "lastName": "А. Пушкин",
-      "birthday": 1825
+      "firstName": "kkgj",
+      "lastName": "xksjd",
+      "birthday": 1863
     }
   ]
 }

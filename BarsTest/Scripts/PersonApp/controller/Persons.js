@@ -1,9 +1,9 @@
 ﻿Ext.define('PersonApp.controller.Persons', {
     extend: 'Ext.app.Controller',
 
-    views: ['PersonList', 'Person'],
-    stores: ['PersonStore'],
-    models: ['Person'],
+    views: ['PersonApp.view.PersonList', 'PersonApp.view.Person'],
+    stores: ['PersonApp.store.PersonStore'],
+    models: ['PersonApp.model.Person'],
     init: function () {
         this.control({
             'viewport > personlist': {
@@ -31,7 +31,7 @@
             id = form.getRecord().get('id');
         values.id = id;
         Ext.Ajax.request({
-            url: 'Controllers/HomeController/update',//!!!!!!
+            url: 'Home/update',
             params: values,
             success: function (response) {
                 var data = Ext.decode(response.responseText);
@@ -52,7 +52,7 @@
             form = win.down('form'),
             values = form.getValues();
         Ext.Ajax.request({
-            url: 'Controllers/ HomeController / create',//!!!!!!
+            url: 'Home/create',
             params: values,
             success: function (response, options) {
                 var data = Ext.decode(response.responseText);
@@ -73,7 +73,7 @@
             form = win.down('form'),
             id = form.getRecord().get('id');
         Ext.Ajax.request({
-            url: 'Controllers/ HomeController /delete',
+            url: 'Home/delete',
             params: { id: id },
             success: function (response) {
                 var data = Ext.decode(response.responseText);
@@ -82,7 +82,7 @@
                     var store = Ext.widget('personlist').getStore();
                     var record = store.getById(id);
                     store.remove(record);
-                    form.getForm.reset();
+                    //form.getForm.reset();
                 }
                 else {
                     Ext.Msg.alert('Удаление', 'Не удалось удалить книгу из библиотеки');
@@ -94,6 +94,7 @@
         var view = Ext.widget('personwindow');
         view.down('form').getForm().reset();
     },
+
     editPerson: function (grid, record) {
         var view = Ext.widget('personwindow');
         view.down('form').loadRecord(record);

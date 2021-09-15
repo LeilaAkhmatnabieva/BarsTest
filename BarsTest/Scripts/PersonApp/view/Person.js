@@ -11,11 +11,11 @@
             xtype: 'form',
             items: [{
                 xtype: 'textfield',
-                name: 'firstname',
+                name: 'firstName',
                 fieldLabel: 'Название'
             }, {
                 xtype: 'textfield',
-                name: 'lastname',
+                name: 'lastName',
                 fieldLabel: 'Автор'
             }, {
                 xtype: 'numberfield',
