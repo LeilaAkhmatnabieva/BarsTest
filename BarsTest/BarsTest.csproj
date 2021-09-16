@@ -3120,6 +3120,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\PersonApp\controller\Persons.js" />
     <Content Include="old.html" />
+    <Content Include="Scripts\PersonApp\model\PersonSearch.js" />
     <Content Include="Scripts\PersonApp\model\Person.js" />
     <Content Include="Scripts\PersonApp\store\PersonStore.js" />
     <Content Include="Scripts\PersonApp\styles\delete.png" />
@@ -3148,6 +3149,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\PersonApp\view\PersonSearch.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

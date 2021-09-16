@@ -9,3 +9,7 @@
 .delete-icon {
     background: transparent url(delete.png) center 0 no-repeat;
 }
+
+.search-icon {
+    background: transparent url(search.png) center 0 no-repeat;
+}

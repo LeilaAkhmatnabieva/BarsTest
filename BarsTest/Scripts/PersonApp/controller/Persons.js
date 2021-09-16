@@ -1,9 +1,9 @@
 ﻿Ext.define('PersonApp.controller.Persons', {
     extend: 'Ext.app.Controller',
 
-    views: ['PersonApp.view.PersonList', 'PersonApp.view.Person'],
+    views: ['PersonApp.view.PersonList', 'PersonApp.view.Person', 'PersonApp.view.PersonSearch'],
     stores: ['PersonApp.store.PersonStore'],
-    models: ['PersonApp.model.Person'],
+    models: ['PersonApp.model.Person', ],
     init: function () {
         this.control({
             'viewport > personlist': {

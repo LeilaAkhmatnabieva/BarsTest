@@ -9,12 +9,12 @@
         //var me = this;
         //me.store = Ext.create('PersonApp.store.PersonStore');
         this.columns = [
-            { header: 'Id', dataIndex: 'id', flex: 1 },
-            { header: 'Name', dataIndex: 'firstName', flex: 1 },
-            { header: 'LastName', dataIndex: 'lastName', flex: 1 },
-            { header: 'birthday', dataIndex: 'birthday', flex: 1 }
+            { header: 'ID', dataIndex: 'id', width: 40},
+            { header: 'ФИО', xtype: 'templatecolumn', dataIndex: 'firstName', flex: 1, tpl: '<t> {lastName} {firstName} {middleName} </t>'},
+            { header: 'Дата рождения', dataIndex: 'birthday', xtype: 'datecolumn', format: 'd:m:Y',  flex: 1 },
+            { header: 'Паспорт', xtype: 'templatecolumn', dataIndex: 'passportNum1', flex: 1, tpl: ' ({passportNum1}) {passportNum2} {passportIssuePlace}, Дата выдачи: {passportIssueDate}' },
+            { header: 'Адрес', dataIndex: 'livingAdress', flex: 1 }
         ];
-
         this.callParent(arguments);
     }
 });
