@@ -2,9 +2,9 @@
     extend: 'Ext.window.Window',
     alias: 'widget.personsearch',
 
-    title: 'Анкета',
+    title: 'Регистр населения. Шаблон поиска ',
     layout: 'fit',
-    height: 400,
+    height: 450,
     autoShow: true,
 
 
@@ -12,9 +12,17 @@
 
         this.items = [{
             xtype: 'form',
-            autoScroll: true,
-            width: 600,           
-            items: [{              
+            bodyPadding: 10,            
+            width: 400,
+            items: [{
+                xtype: 'numberfield',
+                name: 'id',
+                fieldLabel: 'ID гражданина'
+            }, {
+                xtype: 'textfield',
+                name: 'snils',
+                fieldLabel: 'СНИЛС'
+            }, {
                 xtype: 'textfield',
                 name: 'firstName',
                 fieldLabel: 'Имя'
@@ -26,21 +34,48 @@
                 xtype: 'textfield',
                 name: 'middleName',
                 fieldLabel: 'Отчество'
+            }, {
+                xtype: 'datefield',
+                name: 'birthday',
+                fieldLabel: 'Дата рождения'
+            }, {
+                title: 'Паспорт',
+                items: [{
+                    xtype: 'textfield',
+                    name: 'passportNum1',
+                    fieldLabel: 'Серия'
+                }, {
+                    xtype: 'textfield',
+                    name: 'passportNum2',
+                    fieldLabel: 'Номер'
+                }, {
+                    xtype: 'textfield',
+                    name: 'passportIssuePlace',
+                    fieldLabel: 'Место выдачи'
+                }, {
+                    xtype: 'datefield',
+                    name: 'passportIssueDate',
+                    fieldLabel: 'Дата выдачи',
+                }]
+            }, {
+                xtype: 'textfield',
+                name: 'registrAdress',
+                fieldLabel: 'Адрес регистрации',
+            }, {
+                xtype: 'textfield',
+                name: 'livingAdress',
+                fieldLabel: 'Адрес проживания',
             }]
         }];
-        this.dockedItems = [{
-            xtype: 'toolbar',
-            docked: 'top',
-            items: [{
-                text: 'Поиск',
-                iconCls: 'search-icon',
-                action: 'search'
-            }]
-        }];
+
         this.buttons = [{
             text: 'Очистить',
             scope: this,
             action: 'clear'
+        }, {
+            text: 'Поиск',
+            scope: this,
+            action: 'search'
         }];
 
         this.callParent(arguments);

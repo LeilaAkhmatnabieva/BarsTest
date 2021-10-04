@@ -3,12 +3,19 @@
 
     views: ['PersonApp.view.PersonList', 'PersonApp.view.Person', 'PersonApp.view.PersonSearch'],
     stores: ['PersonApp.store.PersonStore'],
-    models: ['PersonApp.model.Person', ],
+    models: ['PersonApp.model.Person'],
     init: function () {
         this.control({
+            'personlist': {
+                afterrender: this.onRender
+            },
             'viewport > personlist': {
                 itemdblclick: this.editPerson
             },
+            'personlist button[action=searchwindow]': {
+                click: this.searchWindow
+            },
+
             'personwindow button[action=new]': {
                 click: this.createPerson
             },
@@ -20,6 +27,41 @@
             },
             'personwindow button[action=clear]': {
                 click: this.clearForm
+            },
+            'personsearch button[action=search]': {
+                click: this.searchPerson
+            },
+            'personsearch button[action=clear]': {
+                click: this.clearSearch
+            }, 
+            'personlist button[action=createwindow]': {
+                click: this.newWindow
+            }
+        });
+    },
+
+    newWindow: function (grid, record) {
+        var view = Ext.widget('personwindow');
+    },
+    // поиск
+    searchPerson: function (button) {
+        var win = button.up('window'),
+            form = win.down('form'),
+            values = form.getValues();
+        Ext.Ajax.request({
+            url: 'Home/load',
+            params: values,
+            success: function (response) {
+                var data = Ext.decode(response.responseText);
+                if (data.success) {
+                    var store = Ext.widget('personlist').getStore();
+                    store.loadData(data.persons);
+                    store.sync();
+                    Ext.Msg.alert('Поиск', data.message);
+                }
+                else {
+                    Ext.Msg.alert('Поиск', 'Не удалось найти');
+                }
             }
         });
     },
@@ -37,7 +79,8 @@
                 var data = Ext.decode(response.responseText);
                 if (data.success) {
                     var store = Ext.widget('personlist').getStore();
-                    store.load();
+                    store.loadData(data.persons);
+                    store.sync();
                     Ext.Msg.alert('Обновление', data.message);
                 }
                 else {
@@ -71,14 +114,12 @@
     deletePerson: function (button) {
         var win = button.up('window'),
             form = win.down('form'),
-
             //values = form.getValues();
-
             id = form.getRecord().get('id');
         Ext.Ajax.request({
             url: 'Home/delete',
-            params: { "id" : id },
-            
+            params: { "id": id },
+
             success: function (response) {
                 var data = Ext.decode(response.responseText);
                 if (data.success) {
@@ -96,11 +137,44 @@
     },
     clearForm: function (grid, record) {
         var view = Ext.widget('personwindow');
-        view.down('form').getForm().reset();
+        view.down('form').getForm().clearForm();
+        //reset();
     },
 
     editPerson: function (grid, record) {
         var view = Ext.widget('personwindow');
         view.down('form').loadRecord(record);
-    }
+    },
+
+    searchWindow: function (grid, record) {
+        var view = Ext.widget('personsearch');
+    },
+
+    clearSearch: function (grid, record) {
+        var view = Ext.widget('personsearch');
+        view.down('form').getForm().reset();
+    },
+
+    onRender: function () {
+        //var win = button.up('window'),
+        //    form = win.down('form'),
+        //    values = form.getValues(),
+        //    id = form.getRecord().get('id');
+        //values.id = id;
+        Ext.Ajax.request({
+            url: 'Home/load',
+            //params: values,
+            success: function (response) {
+                //debugger;
+                var data = Ext.decode(response.responseText);
+                if (data.success) {
+                    var store = Ext.widget('personlist').getStore();
+                    store.loadData(data.persons);
+                }
+                else {
+                    Ext.Msg.alert('Загрузка', 'Не удалось загрузить данные с бд');
+                }
+            }
+        });
+    },
 });

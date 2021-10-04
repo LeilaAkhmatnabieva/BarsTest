@@ -3120,7 +3120,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\PersonApp\controller\Persons.js" />
     <Content Include="old.html" />
-    <Content Include="Scripts\PersonApp\model\PersonSearch.js" />
     <Content Include="Scripts\PersonApp\model\Person.js" />
     <Content Include="Scripts\PersonApp\store\PersonStore.js" />
     <Content Include="Scripts\PersonApp\styles\delete.png" />
@@ -3136,7 +3135,6 @@
     <Content Include="Scripts\extjs\resources\ext-theme-classic\Readme.md" />
     <Content Include="Scripts\extjs\resources\ext-theme-gray\Readme.md" />
     <Content Include="Scripts\extjs\resources\ext-theme-neptune\Readme.md" />
-    <Content Include="Scripts\PersonApp\data\persons.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ext-all.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -3162,7 +3160,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\PersonApp\data\persons2.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,14 +8,7 @@ namespace BarsTest.Models
 {
     public class Person
     {
-        //public Person(int Perid, string firstName, string lastName, string birthday)
-        //{
-        //    this.birthday = birthday;
-        //    this.id = Perid;
-        //    this.lastName = lastName;
-        //    this.firstName = firstName;
-        //}
-        //public Person() { }
+        
         
 
         [Display(Name = "Id гражданина")]
@@ -30,15 +23,15 @@ namespace BarsTest.Models
         public string lastName { get; set; }
         public DateTime? birthday { get; set; }
 
-        public int? passportNum1 { get; set; }//????????????
-        public int? passportNum2 { get; set; }//??????
+        public int? passportNum1 { get; set; }
+        public int? passportNum2 { get; set; }
         public string passportIssuePlace { get; set; }
         public DateTime? passportIssueDate { get; set; }
 
-        public string registrAdress { get; set; }
-        public string livingAdress { get; set; }
+        public string registrAddress { get; set; }
+        public string livingAddress { get; set; }
         public string education { get; set; }
-        public bool? maritalstatus { get; set; }
+        public string maritalstatus { get; set; }
 
         public string SocialStat { get; set; }
         public string Job { get; set; }
